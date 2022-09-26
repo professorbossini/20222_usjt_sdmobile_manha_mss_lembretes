@@ -30,11 +30,19 @@ const res = operacoes.soma(2, 3)
 
 //localhost:6000/lembretes
 app.get('/lembretes', (req, res) => {
-
+  res.send(baseConsulta)
 })
 //localhost:6000/eventos
 app.post('/eventos', (req, res) => {
+  //aqui a gente precisa ir montando a base pouco a pouco...
+  //req.body: {tipo: LembreteCriado , dados: {contador: 1, texto: "Fazer café"} }
+  //req.body: {tipo: ObservacaoCriada, dados: {id: 123456, texto: "Acucar", lembreteId: 1}}
+  // if (req.body.tipo === "LembreteCriado"){
 
+  // }
+  // else
+  funcoes[req.body.tipo](req.body.dados)
+  res.send(baseConsulta)
 })
 
 app.listen(6000, () => console.log("Consultas. Porta 6000."))
