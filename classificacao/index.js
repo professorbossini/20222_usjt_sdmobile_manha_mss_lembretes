@@ -8,7 +8,7 @@ const funcoes = {
     observacao.status = observacao.texto.includes(palavraChave)
       ? "importante"
       : "comum";
-    axios.post("http://localhost:10000/eventos", {
+    axios.post("http://10.0.0.40:10000/eventos", {
       tipo: "ObservacaoClassificada",
       dados: observacao,
     });
